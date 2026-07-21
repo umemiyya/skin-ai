@@ -135,7 +135,7 @@ export default function ScanPage() {
             </CardContent>
           </Card>
 
-          <Card>
+          <Card className='hidden'>
             <CardHeader>
               <CardTitle>Detail Kondisi Kulit</CardTitle>
             </CardHeader>
