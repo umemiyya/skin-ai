@@ -124,14 +124,14 @@ export default function ScanPage() {
             <CardHeader>
               <CardTitle>Hasil Analisis</CardTitle>
             </CardHeader>
-            <CardContent className="grid gap-6 md:grid-cols-2">
+            <CardContent className="grid gap-6 md:grid-cols-1">
               <div className="flex flex-col items-center justify-center gap-3 rounded-xl bg-slate-50 p-6 text-center">
                 <p className="text-sm text-muted-foreground">Jenis Kulit</p>
                 <Badge className="px-4 py-1.5 text-base">{result.skinType}</Badge>
                 <p className="mt-2 text-sm text-muted-foreground">Tingkat Kepercayaan</p>
                 <p className="text-3xl font-bold text-primary">{result.confidence}%</p>
               </div>
-              <SkinRadarChart conditions={result.conditions} />
+              {/* <SkinRadarChart  conditions={result.conditions} /> */}
             </CardContent>
           </Card>
 

@@ -53,7 +53,7 @@ function extractJson(text: string): string {
   const cleaned = text.trim().replace(/^```json/i, '').replace(/^```/, '').replace(/```$/, '');
   const start = cleaned.indexOf('{');
   const end = cleaned.lastIndexOf('}');
-  if (start === -1 || end === -1) throw new Error('Respons AI tidak berisi JSON yang valid');
+  if (start === -1 || end === -1) throw new Error('Respons tidak berisi JSON yang valid');
   return cleaned.slice(start, end + 1);
 }
 
@@ -72,7 +72,7 @@ export async function analyzeFaceImage(
           { type: 'image', source: { type: 'base64', media_type: mediaType, data: base64Image } },
           {
             type: 'text',
-            text: 'Analisis foto wajah ini dan berikan hasil sesuai format JSON yang ditentukan.',
+            text: 'Analisis foto wajah ini dan berikan hasil!',
           },
         ],
       },
@@ -81,16 +81,16 @@ export async function analyzeFaceImage(
 
   const textBlock = response.content.find((c) => c.type === 'text');
   if (!textBlock || textBlock.type !== 'text') {
-    throw new Error('Tidak ada respons teks dari Claude Vision API');
+    throw new Error('Tidak ada respons!');
   }
 
   const jsonString = extractJson(textBlock.text);
   const parsed = JSON.parse(jsonString) as ScanAnalysisResult;
 
   // Validasi minimal terhadap hasil dari AI
-  const allowedTypes = ['Normal', 'Berminyak', 'Kering', 'Kombinasi', 'Sensitif'];
+  const allowedTypes = ['Berjerawat', 'Berminyak', 'Kering'];
   if (parsed.isFace && !allowedTypes.includes(parsed.skinType)) {
-    parsed.skinType = 'Normal';
+    parsed.skinType = 'Berminyak';
   }
 
   return parsed;
