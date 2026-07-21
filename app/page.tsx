@@ -96,9 +96,9 @@ export default function LandingPage() {
             <Button variant="ghost" asChild>
               <Link href="/login">Masuk</Link>
             </Button>
-            <Button asChild>
+            {/* <Button asChild>
               <Link href="/register">Mulai Sekarang</Link>
-            </Button>
+            </Button> */}
           </div>
         </div>
       </header>
