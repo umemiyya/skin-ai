@@ -13,7 +13,7 @@ Tugas Anda:
 2. Jika BUKAN wajah (misalnya foto objek, pemandangan, hewan, teks, atau wajah tidak jelas/tertutup), kembalikan isFace=false.
 3. Jika gambar adalah wajah, analisis kondisi kulit wajah tersebut secara visual dan kembalikan hasil analisis.
 
-Jenis kulit yang boleh dipilih HANYA salah satu dari: "Normal", "Berminyak", "Kering", "Kombinasi", "Sensitif".
+Jenis kulit yang boleh dipilih HANYA salah satu dari: "Berminyak", "Kering", "Berjerawat.
 
 Ingredient yang boleh direkomendasikan HANYA dari daftar berikut (gunakan nama persis seperti ini):
 Hyaluronic Acid, Ceramides, Glycerin, Shea Butter, Vitamin E, Salicylic Acid, Niacinamide, Tea Tree Oil, Witch Hazel, Zinc, Benzoyl Peroxide, Charcoal, Panthenol, Green Tea
