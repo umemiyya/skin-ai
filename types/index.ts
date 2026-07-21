@@ -27,11 +27,11 @@ export interface Product {
 export interface SkinConditions {
   oil: number;
   dryness: number;
-  hydration: number;
-  pores: number;
+  // hydration: number;
+  // pores: number;
   acne: number;
-  redness: number;
-  texture: number;
+  // redness: number;
+  // texture: number;
 }
 
 export interface ScanAnalysisResult {

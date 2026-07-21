@@ -13,11 +13,11 @@ import type { SkinConditions } from '@/types';
 const LABELS: Record<keyof SkinConditions, string> = {
   oil: 'Minyak',
   dryness: 'Kering',
-  hydration: 'Hidrasi',
-  pores: 'Pori-pori',
+  // hydration: 'Hidrasi',
+  // pores: 'Pori-pori',
   acne: 'Jerawat',
-  redness: 'Kemerahan',
-  texture: 'Tekstur',
+  // redness: 'Kemerahan',
+  // texture: 'Tekstur',
 };
 
 export function SkinRadarChart({ conditions }: { conditions: SkinConditions }) {

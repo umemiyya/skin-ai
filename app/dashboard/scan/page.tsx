@@ -19,11 +19,11 @@ import type { ScanAnalysisResult, RecommendedProduct } from '@/types';
 const CONDITION_LABELS: Record<string, string> = {
   oil: 'Minyak',
   dryness: 'Kekeringan',
-  hydration: 'Hidrasi',
-  pores: 'Pori-pori',
+  // hydration: 'Hidrasi',
+  // pores: 'Pori-pori',
   acne: 'Jerawat',
-  redness: 'Kemerahan',
-  texture: 'Tekstur',
+  // redness: 'Kemerahan',
+  // texture: 'Tekstur',
 };
 
 export default function ScanPage() {
