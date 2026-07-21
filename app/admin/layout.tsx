@@ -1,3 +1,5 @@
+'use client';
+
 import { LayoutDashboard, Package, FlaskConical } from 'lucide-react';
 import { SidebarNav } from '@/components/features/sidebar-nav';
 

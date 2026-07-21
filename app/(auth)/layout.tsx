@@ -9,7 +9,7 @@ export default function AuthLayout({ children }: { children: React.ReactNode }) 
           <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-primary text-primary-foreground">
             <Sparkles className="h-4 w-4" />
           </span>
-          SkinDetect
+          SkinAI
         </Link>
         <div className="mx-auto w-full max-w-sm">{children}</div>
       </div>

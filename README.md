@@ -1,4 +1,4 @@
-# SkinDetect — Analisis Jenis Kulit Wajah Berbasis AI
+# SkinAI — Analisis Jenis Kulit Wajah Berbasis AI
 
 Aplikasi Next.js 15 (App Router) + TypeScript untuk analisis jenis kulit wajah
 menggunakan Anthropic Claude Vision, dengan rekomendasi skincare berbasis

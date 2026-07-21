@@ -3,7 +3,7 @@
 import { useCallback, useEffect, useState } from 'react';
 import type { ScanHistoryItem } from '@/types';
 
-const STORAGE_KEY = 'SkinDetect_scan_history';
+const STORAGE_KEY = 'skinai_scan_history';
 
 function readHistory(): ScanHistoryItem[] {
   if (typeof window === 'undefined') return [];

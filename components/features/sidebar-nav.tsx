@@ -23,8 +23,11 @@ export function SidebarNav({ title, items }: SidebarNavProps) {
   return (
     <aside className="flex h-screen w-64 shrink-0 flex-col border-r border-border bg-white">
       <div className="flex items-center gap-2 px-6 py-5">
+        <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-primary text-primary-foreground">
+          <Sparkles className="h-4 w-4" />
+        </span>
         <div>
-          <p className="text-sm font-bold leading-none">SkinDetect</p>
+          <p className="text-sm font-bold leading-none">SkinAI</p>
           <p className="text-xs text-muted-foreground">{title}</p>
         </div>
       </div>

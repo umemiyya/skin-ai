@@ -85,7 +85,7 @@ export default function LandingPage() {
       <header className="sticky top-0 z-40 border-b border-border bg-white/80 backdrop-blur">
         <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
           <Link href="/" className="flex items-center gap-2 text-lg font-bold">
-            SkinDetect
+            SkinAI
           </Link>
           <nav className="hidden items-center gap-8 text-sm font-medium text-muted-foreground md:flex">
             <a href="#cara-kerja" className="hover:text-foreground">Cara Kerja</a>
@@ -223,9 +223,9 @@ export default function LandingPage() {
       <footer className="border-t border-border py-10">
         <div className="mx-auto flex max-w-6xl flex-col items-center justify-between gap-4 px-6 text-sm text-muted-foreground sm:flex-row">
           <div className="flex items-center gap-2 font-semibold text-foreground">
-            <Sparkles className="h-4 w-4 text-primary" /> SkinDetect
+            <Sparkles className="h-4 w-4 text-primary" /> SkinAI
           </div>
-          <p>&copy; {new Date().getFullYear()} SkinDetect. Seluruh hak cipta dilindungi.</p>
+          <p>&copy; {new Date().getFullYear()} SkinAI. Seluruh hak cipta dilindungi.</p>
         </div>
       </footer>
     </div>
