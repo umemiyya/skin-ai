@@ -24,9 +24,7 @@ function mapSkinTypeToCategories(
 
   if (skinType === 'Kering') categories.push('Kering');
   if (skinType === 'Berminyak') categories.push('Berminyak');
-  if (skinType === 'Kombinasi') categories.push('Berminyak', 'Kering');
-  if (skinType === 'Sensitif') categories.push('Berjerawat', 'Kering');
-  if (skinType === 'Normal') categories.push('Kering', 'Berminyak');
+  if (skinType === 'Berjerawat') categories.push('Berjerawat');
 
   // Tambahkan kategori berjerawat berdasarkan skor acne, terlepas dari jenis kulit
   if (conditions.acne >= 40 && !categories.includes('Berjerawat')) {
@@ -83,10 +81,6 @@ export function matchProducts(result: ScanAnalysisResult): RecommendedProduct[] 
       if (result.conditions.dryness >= 50 && product.category === 'Kering') {
         score += 10;
         reasons.push('Membantu mengatasi kulit kering');
-      }
-      if (result.conditions.hydration < 40 && product.category === 'Kering') {
-        score += 5;
-        reasons.push('Meningkatkan hidrasi kulit');
       }
 
       return { ...product, score, reasons };

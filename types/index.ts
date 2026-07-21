@@ -1,5 +1,5 @@
 export type SkinCategory = 'Kering' | 'Berminyak' | 'Berjerawat';
-export type SkinType = 'Normal' | 'Berminyak' | 'Kering' | 'Kombinasi' | 'Sensitif';
+export type SkinType = 'Berminyak' | 'Kering' | 'Berjerawat';
 
 export interface Ingredient {
   id: string;
