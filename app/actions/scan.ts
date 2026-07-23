@@ -1,6 +1,6 @@
 'use server';
 
-import { auth } from '@clerk/nextjs/server';
+import { getSession } from '@/lib/auth-server';
 import { analyzeFaceImage } from '@/services/claude-vision';
 import { matchProducts } from '@/lib/matching';
 import type { ScanAnalysisResult, RecommendedProduct } from '@/types';
@@ -16,8 +16,8 @@ const MAX_SIZE_BYTES = 5 * 1024 * 1024; // 5MB
 const ALLOWED_TYPES = ['image/jpeg', 'image/png', 'image/webp'];
 
 export async function scanFaceAction(formData: FormData): Promise<ScanActionResult> {
-  const { userId } = await auth();
-  if (!userId) {
+  const session = await getSession();
+  if (!session) {
     return { success: false, error: 'Anda harus login untuk menggunakan fitur ini.' };
   }
 
