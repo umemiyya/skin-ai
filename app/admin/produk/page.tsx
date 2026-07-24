@@ -123,7 +123,7 @@ export default function AdminProdukPage() {
                 <div className="flex flex-wrap items-center gap-2">
                   <Badge>{selected.brand}</Badge>
                   <Badge variant="secondary">{selected.category}</Badge>
-                  <Badge variant="outline">{formatCurrency(selected.price)}</Badge>
+                  <Badge variant="outline" className='hidden'>{formatCurrency(selected.price)}</Badge>
                 </div>
                 <p className="text-sm text-muted-foreground">{selected.description}</p>
                 <div>

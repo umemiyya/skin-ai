@@ -182,7 +182,7 @@ export default function ScanPage() {
                         <p className="font-semibold">{product.name}</p>
                         <p className="text-sm text-muted-foreground">{product.brand}</p>
                       </div>
-                      <Badge variant="outline">{formatCurrency(product.price)}</Badge>
+                      <Badge variant="outline" className='hidden'>{formatCurrency(product.price)}</Badge>
                     </div>
                     <p className="mt-2 text-sm text-muted-foreground">{product.description}</p>
                     <div className="mt-2 flex flex-wrap gap-1.5">

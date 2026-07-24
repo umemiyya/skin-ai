@@ -105,7 +105,7 @@ export default function AdminIngredientPage() {
                             <p className="text-sm font-medium">{p.name}</p>
                             <p className="text-xs text-muted-foreground">{p.brand}</p>
                           </div>
-                          <span className="text-sm font-medium">{formatCurrency(p.price)}</span>
+                          <span className="text-sm font-medium hidden">{formatCurrency(p.price)}</span>
                         </div>
                       ))
                     )}
