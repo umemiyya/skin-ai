@@ -8,6 +8,7 @@ import { EmptyState } from '@/components/empty-state';
 import { Skeleton } from '@/components/ui/skeleton';
 import { useScanHistory } from '@/hooks/use-scan-history';
 import { formatDate } from '@/lib/utils';
+import { SkinClassHero } from '../hero';
 
 export function DashboardClient({ username }: { username: string }) {
   const { history, isLoaded } = useScanHistory();
@@ -15,11 +16,12 @@ export function DashboardClient({ username }: { username: string }) {
 
   return (
     <div className="space-y-8">
+
       <div>
         <h1 className="text-2xl font-bold tracking-tight">Halo, {username} 👋</h1>
         <p className="mt-1 text-muted-foreground">Berikut ringkasan aktivitas analisis kulit Anda.</p>
       </div>
-
+      <SkinClassHero />
       {!isLoaded ? (
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
           {Array.from({ length: 4 }).map((_, i) => (

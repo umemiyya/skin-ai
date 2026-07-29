@@ -1,6 +1,7 @@
 import { Package, FlaskConical, Layers } from 'lucide-react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { products, ingredients } from '@/lib/matching';
+import { SkinClassHero } from '@/components/hero';
 
 export default function AdminDashboardPage() {
   const totalProduk = products.length;
@@ -19,6 +20,8 @@ export default function AdminDashboardPage() {
         <h1 className="text-2xl font-bold tracking-tight">Dashboard Admin</h1>
         <p className="mt-1 text-muted-foreground">Ringkasan katalog produk dan ingredient skincare.</p>
       </div>
+
+      <SkinClassHero />
 
       <div className="grid gap-4 sm:grid-cols-3">
         {cards.map((card) => (

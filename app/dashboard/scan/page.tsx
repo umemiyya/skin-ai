@@ -23,7 +23,7 @@ import type { ScanAnalysisResult, RecommendedProduct } from '@/types';
 const CONDITION_LABELS: Record<string, string> = {
   oil: 'Tidak terlalu berminyak',
   dryness: 'Tidak terlalu kering',
-  acne: 'Jarang berjerawat',
+  acne: 'Berjerawat',
 };
 
 // Cycles through a soft palette so each product tile reads distinctly,
