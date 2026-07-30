@@ -178,7 +178,7 @@ export default function ScanPage() {
                   </div>
                 </div>
 
-                <div className="border-t border-border pt-4">
+                <div className="border-t hidden border-border pt-4">
                   <p className="mb-3 text-sm font-semibold">
                     Ciri-ciri Kulit {result.skinType}
                   </p>
