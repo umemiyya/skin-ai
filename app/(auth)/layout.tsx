@@ -13,7 +13,7 @@ export default function AuthLayout({ children }: { children: React.ReactNode }) 
         </Link> */}
         <div className="mx-auto w-full max-w-sm">{children}</div>
       </div>
-      <div className="relative hidden w-1/2 bg-gradient-to-br from-blue-600 via-blue-500 to-sky-400 lg:block">
+      <div className="relative hidden w-1/2 bg-gradient-to-br from-emerald-600 via-emerald-500 to-emerald-400 lg:block">
         <div className="flex h-full flex-col items-center justify-center p-16 text-white">
           <div className="max-w-md space-y-4 text-center">
             <h2 className="text-3xl font-bold">Kenali kulit Anda dengan AI</h2>
