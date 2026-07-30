@@ -22,7 +22,7 @@ const steps = [
   {
     icon: BrainCircuit,
     title: '2. Analisis oleh AI',
-    desc: 'Claude Vision AI menganalisis kondisi kulit wajah Anda secara mendalam.',
+    desc: 'Menganalisis kondisi kulit wajah Anda secara mendalam.',
   },
   {
     icon: Gauge,
@@ -40,7 +40,7 @@ const features = [
   {
     icon: ScanFace,
     title: 'Deteksi Jenis Kulit Akurat',
-    desc: 'Menggunakan AI vision canggih untuk mendeteksi jenis dan kondisi kulit wajah Anda.',
+    desc: 'Menggunakan AI canggih untuk mendeteksi jenis dan kondisi kulit wajah Anda.',
   },
   {
     icon: ListChecks,
@@ -70,7 +70,7 @@ const faqs = [
   },
   {
     q: 'Seberapa akurat hasil analisisnya?',
-    a: 'Analisis menggunakan model AI vision canggih, namun hasil tetap bersifat sebagai panduan awal dan bukan pengganti konsultasi dermatolog.',
+    a: 'Analisis menggunakan model AI canggih, namun hasil tetap bersifat sebagai panduan awal dan bukan pengganti konsultasi dermatolog.',
   },
   {
     q: 'Jenis kulit apa saja yang bisa dideteksi?',
@@ -97,9 +97,6 @@ export default function LandingPage() {
             <Button variant="ghost" asChild>
               <Link href="/login">Masuk</Link>
             </Button>
-            {/* <Button asChild>
-              <Link href="/register">Mulai Sekarang</Link>
-            </Button> */}
           </div>
         </div>
       </header>
@@ -109,7 +106,7 @@ export default function LandingPage() {
         <div className="absolute inset-0 -z-10 bg-gradient-to-b from-blue-50 via-white to-white" />
         <div className="mx-auto flex max-w-5xl flex-col items-center px-6 py-24 text-center">
           <span className="mb-6 inline-flex items-center gap-2 rounded-full border border-blue-200 bg-blue-50 px-4 py-1.5 text-sm font-medium text-primary">
-            <Sparkles className="h-3.5 w-3.5" /> Didukung oleh AI Vision Terkini
+            <Sparkles className="h-3.5 w-3.5" /> Didukung oleh AI Terkini
           </span>
           <h1 className="max-w-3xl text-4xl font-bold tracking-tight text-foreground sm:text-5xl lg:text-6xl">
             Analisis Jenis Kulit Wajah Menggunakan AI

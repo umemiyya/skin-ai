@@ -1,10 +1,6 @@
 import { SignJWT, jwtVerify } from 'jose';
 import type { SessionPayload } from '@/types/auth';
 
-// File ini SENGAJA tidak mengimpor 'next/headers' ataupun library Node-only,
-// agar bisa dipakai baik di Server Actions/Server Components (Node runtime)
-// maupun di middleware.ts (Edge runtime).
-
 export const SESSION_COOKIE_NAME = 'session';
 const SESSION_DURATION_SECONDS = 60 * 60 * 24 * 7; // 7 hari
 

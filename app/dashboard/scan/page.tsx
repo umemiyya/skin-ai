@@ -16,7 +16,6 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { ImageDropzone } from '@/components/features/image-dropzone';
-import { scanFaceAction } from '@/app/actions/scan';
 import { useScanHistory } from '@/hooks/use-scan-history';
 import type { ScanAnalysisResult, RecommendedProduct } from '@/types';
 
@@ -26,8 +25,6 @@ const CONDITION_LABELS: Record<string, string> = {
   acne: 'Berjerawat',
 };
 
-// Cycles through a soft palette so each product tile reads distinctly,
-// mirroring the colored category tiles in the reference design.
 const TILE_COLORS = [
   'bg-emerald-50 text-emerald-700',
   'bg-sky-50 text-sky-700',
@@ -65,7 +62,16 @@ export default function ScanPage() {
     try {
       const formData = new FormData();
       formData.append('image', file);
-      const res = await scanFaceAction(formData);
+
+      const response = await fetch(
+        `https://skin-be-hazel.vercel.app/api/scan`,
+        {
+          method: 'POST',
+          body: formData,
+        }
+      );
+
+      const res = await response.json();
 
       if (!res.success || !res.result) {
         toast.error(res.error || 'Gambar tidak dapat dianalisis.');

@@ -12,10 +12,7 @@ import type {
 export const products = productsData as unknown as Product[];
 export const ingredients = ingredientsData as unknown as Ingredient[];
 
-/**
- * Memetakan jenis kulit hasil deteksi AI ke kategori produk/ingredient
- * yang tersedia pada dataset (Kering, Berminyak, Berjerawat).
- */
+
 function mapSkinTypeToCategories(
   skinType: SkinType,
   conditions: ScanAnalysisResult['conditions']
@@ -26,7 +23,6 @@ function mapSkinTypeToCategories(
   if (skinType === 'Berminyak') categories.push('Berminyak');
   if (skinType === 'Berjerawat') categories.push('Berjerawat');
 
-  // Tambahkan kategori berjerawat berdasarkan skor acne, terlepas dari jenis kulit
   if (conditions.acne >= 40 && !categories.includes('Berjerawat')) {
     categories.push('Berjerawat');
   }
@@ -34,12 +30,6 @@ function mapSkinTypeToCategories(
   return Array.from(new Set(categories));
 }
 
-/**
- * Skor kecocokan produk berdasarkan:
- * - Kategori produk vs jenis kulit (bobot terbesar)
- * - Kecocokan ingredient yang direkomendasikan AI
- * - Kondisi kulit spesifik (acne, oil, dryness, dll)
- */
 export function matchProducts(result: ScanAnalysisResult): RecommendedProduct[] {
   const relevantCategories = mapSkinTypeToCategories(result.skinType, result.conditions);
   const recommendedIngredientsLower = result.recommendedIngredients.map((i) =>
@@ -52,13 +42,11 @@ export function matchProducts(result: ScanAnalysisResult): RecommendedProduct[] 
       let score = 0;
       const reasons: string[] = [];
 
-      // 1. Kecocokan kategori (bobot 40)
       if (relevantCategories.includes(product.category)) {
         score += 40;
         reasons.push(`Sesuai untuk kulit ${product.category.toLowerCase()}`);
       }
 
-      // 2. Kecocokan ingredient yang direkomendasikan AI (bobot 15 per ingredient, maks 45)
       const matchedIngredients = product.ingredients.filter((ing) =>
         recommendedIngredientsLower.includes(ing.toLowerCase())
       );
@@ -69,7 +57,6 @@ export function matchProducts(result: ScanAnalysisResult): RecommendedProduct[] 
         );
       }
 
-      // 3. Kecocokan berdasarkan kondisi kulit spesifik (bobot 15)
       if (result.conditions.acne >= 50 && product.category === 'Berjerawat') {
         score += 15;
         reasons.push('Membantu mengatasi tingkat jerawat yang cukup tinggi');
