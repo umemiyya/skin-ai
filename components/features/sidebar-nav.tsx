@@ -56,24 +56,6 @@ export function SidebarNav({ title, items, username }: SidebarNavProps) {
 
       <div className="space-y-3 border-border px-6 py-4">
         <SidebarIllustration />
-              <div className="grid grid-cols-2 gap-2">
-        <div className="relative h-20 bg-white/85 rounded-xl">
-        <Image
-            src="/handayani.png"
-            alt="Detail ayam broiler 1"
-            fill
-            className="object-contain p-1.5"
-          />
-        </div>
-        <div className="relative h-20 bg-white/85 rounded-xl">
-          <Image
-            src="/logo-h.png"
-            alt="Detail ayam broiler 2"
-            fill
-            className="object-contain p-1.5"
-          />
-        </div>
-      </div>
         {/* <div className="flex items-center gap-2">
           <span className="flex h-8 w-8 items-center justify-center rounded-full bg-muted">
             <UserCircle2 className="h-5 w-5 text-muted-foreground" />
