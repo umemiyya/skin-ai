@@ -18,6 +18,7 @@ import { Badge } from '@/components/ui/badge';
 import { ImageDropzone } from '@/components/features/image-dropzone';
 import { useScanHistory } from '@/hooks/use-scan-history';
 import type { ScanAnalysisResult, RecommendedProduct } from '@/types';
+import Image from 'next/image';
 
 const CONDITION_LABELS: Record<string, string> = {
   oil: 'Tidak terlalu berminyak',
@@ -231,32 +232,40 @@ export default function ScanPage() {
             ) : (
               <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-4">
                 {recommendations.slice(0, 8).map((product, i) => (
-                  <div
-                    key={product.id}
-                    className="flex flex-col overflow-hidden rounded-xl border border-border"
-                  >
-                    <div
-                      className={`flex h-28 hidden items-center justify-center ${TILE_COLORS[i % TILE_COLORS.length]}`}
-                    >
-                      <ScanFace className="h-8 w-8 opacity-60" />
-                    </div>
-                    <div className="flex flex-1 flex-col gap-1 p-4">
-                      <p className="text-xs font-medium text-muted-foreground">
-                        {product.brand}
-                      </p>
-                      <p className="text-sm font-semibold leading-snug">{product.name}</p>
-                      <p className="line-clamp-2 text-xs text-muted-foreground">
-                        {product.description}
-                      </p>
-                      <Button
-                        variant="outline"
-                        size="sm"
-                        className="mt-3 hidden w-full border-primary/30 text-primary hover:bg-secondary hover:text-primary"
-                      >
-                        Lihat Produk
-                      </Button>
-                    </div>
+                <div
+                  key={product.id}
+                  className="flex flex-col overflow-hidden rounded-xl border border-border"
+                >
+                  <div className="relative aspect-square w-full">
+                    <Image
+                      src={product.image}
+                      alt={product.name}
+                      fill
+                      className="object-cover"
+                    />
                   </div>
+                  <div
+                    className={`flex h-28 hidden items-center justify-center ${TILE_COLORS[i % TILE_COLORS.length]}`}
+                  >
+                    <ScanFace className="h-8 w-8 opacity-60" />
+                  </div>
+                  <div className="flex flex-1 flex-col gap-1 p-4">
+                    <p className="text-xs font-medium text-muted-foreground">
+                      {product.brand}
+                    </p>
+                    <p className="text-sm font-semibold leading-snug">{product.name}</p>
+                    <p className="line-clamp-2 text-xs text-muted-foreground">
+                      {product.description}
+                    </p>
+                    <Button
+                      variant="outline"
+                      size="sm"
+                      className="mt-3 hidden w-full border-primary/30 text-primary hover:bg-secondary hover:text-primary"
+                    >
+                      Lihat Produk
+                    </Button>
+                  </div>
+                </div>
                 ))}
               </div>
             )}
